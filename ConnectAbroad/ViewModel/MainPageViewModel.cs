@@ -11,6 +11,7 @@ namespace ConnectAbroad
 	public class MainPageViewModel : BaseViewModel
 	{
 		readonly ITranslationService translateService;
+		AuthenticationService authService;
 		private ObservableCollection<MessageViewModel> messagesList;
 
 		public ObservableCollection<MessageViewModel> Messages
@@ -33,7 +34,9 @@ namespace ConnectAbroad
 		public MainPageViewModel()
 		{
 			// Initialize with default values
-			translateService = DependencyService.Get<ITranslationService>();
+			authService = new AuthenticationService(Constants.TextTranslatorApiKey);
+			translateService = new TranslationService(authService);
+
 			Messages = new ObservableCollection<MessageViewModel>
 			{
 				new MessageViewModel { Text = "Hi! Do you know where is downtown?", IsIncoming = true, MessagDateTime = DateTime.Now.AddMinutes(-25)},

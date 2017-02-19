@@ -66,6 +66,10 @@
     <Compile Include="Service\ITranslationService.cs" />
     <Compile Include="Service\TranslationService.cs" />
     <Compile Include="DataModel\LanguageCodes.cs" />
+    <Compile Include="Service\IAuthenticationService.cs" />
+    <Compile Include="Service\AuthenticationService.cs" />
+    <Compile Include="DataModel\Timer.cs" />
+    <Compile Include="DataModel\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
